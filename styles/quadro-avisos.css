@@ -7,7 +7,9 @@
 }
 body{
     height: 100%;
-    position: relative;
+    background-image: linear-gradient(to top, rgb(163, 64, 163), rgb(248, 206, 66));
+    background-repeat: no-repeat;
+    background-size: 100% 100vh;
 }
 a{
     color: inherit;
@@ -19,25 +21,16 @@ a{
 */
 
 header{
+    width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin: 1em 2em 1em 1em;
 }
 header img{
-    width: inherit;
     height: 10em;
 }
-header h1{
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: normal;
-    font-size: 2.5em;
-    width: 12em;
-    text-align: center;
-    color: #FF5757;
-}
+
 header img[alt="logo-bottom"]{
-    width: inherit;
     height: 6em;
 }
 header img[alt="exit-icon"]{
@@ -53,13 +46,23 @@ header img[alt="exit-icon"]{
     height: 6em;
     border-top-right-radius: 200px;
     border-bottom-right-radius: 200px;
-    background-color: #7963f7;
+    background-color: rgb(255, 175, 19);
+    border-right: 1px solid black;
+    margin-right: 20px;
 }
 
 /* 
     FIM - CABEÇALHO
 */
-
+@media screen and (max-width:847px) {
+    #plano-fundo-cabeçalho{
+        display: none;
+    }
+    header img[alt="logo-bottom"]{
+        border-bottom-right-radius: 5em;
+        border-top-right-radius: 5em;
+    }
+}
 /* 
     CORPO
 */
@@ -69,45 +72,95 @@ header img[alt="exit-icon"]{
     flex-direction: row;
     flex-wrap: wrap;
     overflow: auto;
-    justify-content: center;
-    background-color: #EB9898;
-    width: 90%;
-    height: 42em;
-    margin: 0 auto 2em auto;
-    padding: 1.5em;
+    width: 100%;
+    height: 80vh;
+    background-image: url("../images/professor.png");
+    background-repeat: no-repeat;
+    background-position: right;
 }
 #quadro-avisos .post-it{
     display: flex;
-    position: relative;
     font-family: Arial, Helvetica, sans-serif;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
-    width: 11em;
-    height: 14em;
-    padding: 1em;
+    width: 22em;
+    height: 20em;
     text-align: center;
-    background-color: yellow;
-    margin: 2.5em 2.5em;
-    cursor: grab;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
+    background-image: url("../images/postit.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin: 2.5em 1em;
+    cursor: pointer;
 }
-#quadro-avisos .post-it:hover{
-    border: 2px solid black;
-}
+
 #quadro-avisos .post-it p{
     font-size: 1.5em;
 }
-.post-it .bar-post-it{
-    content: "";
-    background-color: #c2c261;
-    position: absolute;
-    width: 100%;
-    height: 1em;
-    top: 0;
-}
+
 
 /* 
     FIM - CORPO
 */
+
+
+
+/* 
+    INICIO - AVISO
+*/
+
+
+.aviso{
+    width: 100%;
+    height: 100vh;
+    display: none;
+    
+}
+.text{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60vw;
+    height: 40vh;
+    background-color: #e0e0e0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.text div{
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: clamp(8px, 10em, 1rem);
+    text-transform: uppercase;
+}
+.close{
+    width: 50px;
+    height: 50px;
+}
+.close span{
+    width: 20px;
+    height: 20px;
+    background-color: rgb(0, 0, 0);
+    rotate: 45deg;
+}
+.close span:nth-of-type(even){
+    rotate: -45deg;
+}
+
+@media screen and (max-width:847px) {
+    #plano-fundo-cabeçalho{
+        display: none;
+    }
+    header img[alt="logo-bottom"]{
+        border-bottom-right-radius: 5em;
+        border-top-right-radius: 5em;
+    }
+}
+
+@media screen and (max-width:698px){
+    header{
+        scale: 0.8;
+    }
+    
+}
