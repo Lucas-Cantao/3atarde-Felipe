@@ -1,0 +1,180 @@
+*
+
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body
+
+{
+
+    background: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.waves
+
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+
+@font-face {
+    font-family: 'Defu';
+    src: url(Pertiway-Regular.otf);
+}
+
+.top
+
+{
+    width: 100%;
+    height: 10vh;
+    background: rgb(178, 12, 255);
+    color: white;
+    min-height: 55px;
+    display: grid;
+    place-content: center;
+    position: absolute;
+    font-family: 'Defu';
+    font-size: clamp(32px, 3vh + 3vw, 3rem);
+}
+
+.top p
+
+{
+    z-index: 10;
+}
+
+.text
+
+{
+    margin-top: 10vh;
+    width: 50%;
+    height: 500px;
+    color: rgb(255, 255, 255);
+    font-size: 17px;
+    background: rgba(15, 15, 15, 1);
+    position: absolute;
+    z-index: 1;
+    top: 50vh;
+    transform: translateY(-50%);
+    overflow: auto;
+    padding: 20px;
+}
+
+
+
+.container 
+
+{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.bolhas
+
+{
+    position: absolute;
+    display: flex;
+}
+
+.heart{
+    width: 10px;
+    height: 10px;
+    background-color: #3887ff;
+    transform: rotate(-45deg);
+    box-shadow: 0 0 10px #3887ff44,
+    0 0 50px #3887ff,
+    0 0 100px #3887ff;
+    margin: 0 4px;
+    animation: anima calc(180s / var(--i)) linear infinite;
+}
+
+.heart2{
+    width: 10px;
+    height: 10px;
+    transform: rotate(-45deg);
+    background: #ff55f7;
+    box-shadow: 0 0 10px #ff55f744,
+    0 0 50px #ff55f7,
+    0 0 100px #ff55f7;
+    margin: 0 4px;
+    animation: anima calc(180s / var(--i)) linear infinite;
+}
+
+@keyframes anima
+
+{
+    0%
+    {
+        translate: 0 110vh;
+        scale: 0;
+    }
+    100%
+    {
+        translate: 0 -10vh;
+        scale: 1.5;
+    }
+}
+
+
+
+
+.heart::before,
+.heart::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #3887ff;
+    box-shadow: 0 0 10px #3887ff44,
+    0 0 50px #3887ff,
+    0 0 100px #3887ff;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -5px;
+    left: 0;
+}
+
+.heart::after {
+    top: 0;
+    left: 5px;
+}
+
+
+.heart2::before,
+.heart2::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #ff55f7;
+    box-shadow: 0 0 10px #ff55f744,
+    0 0 50px #ff55f7,
+    0 0 100px #ff55f7;
+    border-radius: 50%;
+}
+
+.heart2::before {
+    top: -5px;
+    left: 0;
+}
+
+.heart2::after {
+    top: 0;
+    left: 5px;
+}
+
